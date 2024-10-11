@@ -15,7 +15,7 @@ const Cart = () => {
 
     return (
         <>
-        <div className="cart fixed top-0 right-[-100%] w-[300px] h-screen bg-white duration-300 z-[56]">
+        <div className="cart fixed top-0 right-[-100%] w-[300px] md:w-[350px] h-screen bg-white duration-300 z-[56]">
             <div className="flex justify-between items-center py-5 px-3 border-b-[1px] border-gray-400">
                 <h2 className="font-bold">Cart</h2>
                 <p className="cursor-pointer hover:text-red-600" onClick={closeCart}><Close fontSize="small" className="mt-[-3px]" />Close</p>

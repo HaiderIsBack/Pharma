@@ -17,7 +17,7 @@ const MenuSidebar = () => {
 
     return (
         <>
-        <div className="menu-sidebar fixed top-0 left-[-100%] w-[350px] h-screen z-[56] duration-300 bg-white px-5">
+        <div className="menu-sidebar fixed top-0 left-[-100%] w-[300px] h-screen z-[56] duration-300 bg-white px-5">
             <div className="flex flex-col">
                 <div className="flex">
                     <form action="" className="relative w-full">
