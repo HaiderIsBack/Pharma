@@ -6,7 +6,9 @@ const Transition = () => {
     const textRef = useRef(null);
     const boxRef = useRef(null);
     useEffect(()=>{
-        document.body.classList.add("stop-scrolling");
+        if(window.innerWidth > 1020){
+            document.body.classList.add("stop-scrolling");
+        }
         const timeline = gsap.timeline();
         timeline.to(textRef.current, {
             scale: 100,
@@ -28,7 +30,9 @@ const Transition = () => {
             duration: 2,
             ease: "power3.inOut",
             onComplete: () => {
-                document.body.classList.remove("stop-scrolling")
+                if(window.innerWidth > 1020){
+                    document.body.classList.remove("stop-scrolling");
+                }
             }
         });
     }, []);
