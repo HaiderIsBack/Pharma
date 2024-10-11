@@ -11,6 +11,8 @@ import MenuSidebar from './components/MenuSidebar';
 
 // Pages
 import Home from './pages/Home';
+import ProductPage from './pages/ProductPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
@@ -22,12 +24,14 @@ function App() {
 
       
       <Router>
+        <ScrollToTop />
         <MenuSidebar />
         <Cart />
         <Nav />
         <Routes>
           <Route path='/'>
             <Route path='' element={<Home />} />
+            <Route path='product/:productId' element={<ProductPage />} />
           </Route>
         </Routes>
       </Router>

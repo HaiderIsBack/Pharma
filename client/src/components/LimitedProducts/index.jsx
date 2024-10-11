@@ -1,6 +1,8 @@
 import './index.css';
 
 import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
 import { dummyProducts } from "../../assets/products";
 
 import { StarBorderOutlined, StarHalf, Star, SpaRounded, Shuffle, FavoriteBorderOutlined } from '@mui/icons-material';
@@ -29,6 +31,7 @@ const LimitedProducts = ({ productColumns, maxProducts }) => {
 }
 
 const ProductCard = ({ product }) => {
+    const navigate = useNavigate();
     const productRef = useRef(null);
     let discountedPrice = product.price
 
@@ -55,7 +58,9 @@ const ProductCard = ({ product }) => {
         <>
         <div ref={productRef} className="product-card bg-white border-[1px] p-3 text-center border-gray-300 hover:border-black duration-300 relative group">
             <div className="w-full h-[100px] lg:h-[200px] p-3 cursor-pointer">
-                <img src={product.image} alt={product.name} className="w-full h-full object-contain hover:scale-90 duration-300" loading="lazy" />
+                <Link to={"/product/" + product.id}>
+                    <img src={product.image} alt={product.name} className="w-full h-full object-contain hover:scale-90 duration-300" loading="lazy" />
+                </Link>
             </div>
             <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center gap-3">
                 <div className="border-[1px] border-gray-400 cursor-pointer p-2 pt-[-5px] bg-white">
@@ -78,7 +83,7 @@ const ProductCard = ({ product }) => {
             {
                 product.discount ? product.discount.type === "percentage" ? <p className='absolute top-1 left-1 bg-blue-700 text-white p-2 text-sm'>-{product.discount.value}%</p> : null : null
             }
-            <button className="add-to-cart-btn relative duration-300 bg-blue-700 text-white w-full text-sm translate-y-[75%] overflow-hidden py-3">Add to Cart</button>
+            <button className="add-to-cart-btn relative duration-300 bg-blue-700 text-white w-full text-sm translate-y-[75%] overflow-hidden py-3" onClick={()=>navigate("/product/" + product.id)}>Add to Cart</button>
         </div>
         </>
     );

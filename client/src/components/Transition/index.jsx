@@ -11,34 +11,32 @@ const Transition = () => {
         }
         const timeline = gsap.timeline();
         timeline.to(textRef.current, {
-            scale: 100,
-            duration: 1.5,
+            clipPath: "inset(0% 0% 100% 0%)",
+            duration: 3,
             delay: 3,
-            ease: "power3.inOut"
-        });
+            ease: "power4.inOut",
+        })
         timeline.to(boxRef.current, {
-            opacity: 0,
-            duration: 1
+            clipPath: "inset(0% 0% 100% 0%)",
+            duration: 2,
+            ease: "power4.inOut",
         });
         timeline.to(boxRef.current, {
             display: "none",
             duration: 1,
-            ease: "power3.inOut"
-        })
-        timeline.to(textRef.current, {
-            scale: 100,
-            duration: 2,
-            ease: "power3.inOut",
+            ease: "power4.inOut",
             onComplete: () => {
                 if(window.innerWidth > 1020){
                     document.body.classList.remove("stop-scrolling");
                 }
             }
-        });
+        })
     }, []);
     return (
-        <div ref={boxRef} className="fixed top-0 left-0 z-[100] w-screen h-screen flex justify-center items-center bg-gradient-to-tr from-[var(--brand-primary)] to-[var(--brand-primary-dark)]">
-            <h1 ref={textRef} className="text-white  text-[10vw] select-none font-bold"><SlideUp>GOLI</SlideUp></h1>
+        <div ref={boxRef} className="transition-wrapper fixed top-0 left-0 z-[100] w-screen h-screen flex justify-center items-center bg-gradient-to-tr from-[var(--brand-primary)] to-[var(--brand-primary-dark)]">
+            <div ref={textRef} className="transition-wrapper">
+                <h1 className="text-white  text-[10vw] select-none font-bold"><SlideUp>GOLI</SlideUp></h1>
+            </div>
         </div>
     )
 }
