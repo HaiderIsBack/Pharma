@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --brand-typography: "Jost", sans-serif;
+    --brand-primary: #00509D;
+    --brand-primary-dark: #003F88;
+    --brand-secondary: #FFD500;
+    --brand-secondary-dark: #FDC500;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--brand-typography);
+}
+
+.stop-scrolling{
+    overflow: hidden;
+}
