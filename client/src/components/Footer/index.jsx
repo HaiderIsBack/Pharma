@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className='bg-black mt-[100px] py-10 px-5 sm:px-0'>
             <div className="container mx-auto grid grid-cols-12 gap-5 text-white">
                 <div className="col-span-12 sm:col-span-6 lg:col-span-3">
-                    <h1 className='text-5xl font-bold mb-5'>GOLI</h1>
+                    <h1 className='text-5xl font-bold mb-5'>Dawaiwala</h1>
                     <p className='text-sm text-gray-300 mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eaque dolor vel natus explicabo laudantium nesciunt exercitationem illum at perspiciatis.</p>
                     <a href='' className='text-sm text-gray-300 block my-3'><LocationOn fontSize='small' /> Lorem ipsum dolor sit amet.</a>
                     <a href='tel:+923278848936' className='text-sm text-gray-300 block my-3'><PhoneAndroid fontSize='small' /> (+92) 327-8848936</a>

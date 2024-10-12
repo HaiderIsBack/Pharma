@@ -32,12 +32,12 @@ const Nav = () => {
                 <div className="col-span-2 h-full flex items-center justify-center lg:hidden">
                     <span onClick={openSidebarMenu}><Menu /></span>
                 </div>
-                <div className="col-span-8 lg:col-span-2 h-full flex items-center justify-center">
+                <div className="col-span-8 lg:col-span-3 h-full flex items-center justify-center">
                     <Link to={"/"}>
-                        <h1 className='text-blue-700 text-5xl font-bold uppercase'>Goli</h1>
+                        <h1 className='text-blue-700 text-5xl font-bold'>Dawaiwala</h1>
                     </Link>
                 </div>
-                <div className="col-span-8 hidden lg:block">
+                <div className="col-span-7 hidden lg:block">
                     <div className="w-full bg-gray-50 flex border-[1px] border-gray-300 rounded-xl">
                         <select name="" id="" className='outline-none bg-transparent p-3 px-3 cursor-pointer'>
                             <option value="all-categories">All Categories</option>

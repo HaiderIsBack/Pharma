@@ -22,7 +22,6 @@ function App() {
 
       <Transition />
 
-      
       <Router>
         <ScrollToTop />
         <MenuSidebar />

@@ -30,7 +30,8 @@ const Transition = () => {
                     document.body.classList.remove("stop-scrolling");
                 }
             }
-        })
+        });
+        
     }, []);
     return (
         <div ref={boxRef} className="transition-wrapper fixed top-0 left-0 z-[100] w-screen h-screen flex justify-center items-center bg-gradient-to-tr from-[var(--brand-primary)] to-[var(--brand-primary-dark)]">

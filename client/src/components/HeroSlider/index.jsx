@@ -65,8 +65,9 @@ const HeroSlider = () => {
                             <button className='bg-transparent text-white mt-[20px] py-3 px-5 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 inline-block duration-300'>Shop Now <ShoppingCartSharp /></button>
                         </div>
                         <div className="w-full relative">
-                            <img src="/truck.png" alt="" className='md:translate-y-[10%] lg:translate-x-[-20%] drop-shadow-xl absolute lg:relative bottom-0 translate-y-[25%] right-0' />
-                            <img src="/hero-slide-delivery-boy.png" alt="hero slide delivery boy" className=' drop-shadow-2xl w-1/2 lg:w-auto absolute md:relative bottom-0 md:bottom-auto md:translate-y-0 translate-y-[25%] right-0' />
+                            <img src="/truck.png" alt="" className='md:translate-y-[10%] lg:translate-x-[-20%] drop-shadow-xl absolute bottom-0 translate-y-[25%] right-0' />
+                            {/* <img src="/hero-slide-delivery-boy.png" alt="hero slide delivery boy" className=' drop-shadow-2xl absolute bottom-0 translate-y-[25%]' /> */}
+                            <img src="/hero-slide-delivery-boy.png" alt="hero slide delivery boy" className=' drop-shadow-2xl w-1/2 lg:w-auto absolute md:relative bottom-0 md:bottom-0 translate-y-[15%] md:translate-y-[50%] lg:translate-y-[25%] right-0' />
                         </div>
                     </div>
                 </SwiperSlide>

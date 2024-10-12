@@ -15,6 +15,8 @@ import HeroSlider from "../../components/HeroSlider";
 import Brands from "../../components/Brands";
 import ContactUs from "../../components/Contact Us";
 
+import Tilt from "react-parallax-tilt";
+
 const Home = () => {
     useEffect(()=>{
         gsap.registerPlugin(ScrollTrigger);
@@ -28,15 +30,15 @@ const Home = () => {
         });
 
         gsap.to(".hero-pill", {
-        y: -200,
-        scale: 1.5,
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "-100px bottom",
-            end: "bottom top",
-            scrub: true,
-        }
+            y: -200,
+            scale: 1.5,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".hero",
+                start: "-100px bottom",
+                end: "bottom top",
+                scrub: true,
+            }
         });
     }, []);
     return (
@@ -53,35 +55,40 @@ const Home = () => {
         </div>
 
         <div className="container mx-auto  mb-24">
-            <Swiper slidesPerView={window.innerWidth < 1020 ? 1 : 3} spaceBetween={20} loop={false} className='pt-20'>
+            <Swiper slidesPerView={window.innerWidth < 1020 ? 1 : 3} spaceBetween={20} loop={false} className='pt-36'>
                 <SwiperSlide>
-                    <div className="bg-gradient-to-tr from-blue-700 to-blue-800 text-white p-5">
-                        <div className="flex items-center justify-center flex-col relative border-b-[1px] border-blue-900 py-3 mb-3 gap-3">
-                            <img src="/3d-pharma.png" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-75%] w-44 drop-shadow-md" />
-                            <h5 className="cursor-default font-semibold">Wholesale Deals</h5>
+                    <Tilt perspective={1000} tiltMaxAngleX={10} tiltMaxAngleY={10} glareColor='white' glareEnable={true}>
+                        <div className="bg-gradient-to-tr from-blue-700 to-blue-800 text-white p-5 rounded-lg">
+                            <div className="flex items-center justify-center flex-col relative border-b-[1px] border-blue-900 py-3 mb-3 gap-3">
+                                <img src="/dollar.gif" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-90%] w-36" />
+                                <h5 className="cursor-default font-semibold">Wholesale Deals</h5>
+                            </div>
+                            <p className="cursor-default text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eveniet, culpa corrupti consequatur vel non veritatis nulla itaque cumque recusandae.</p>
+                            <div className="flex justify-center items-center w-full mt-3">
+                                <a href="#" className="px-5 py-3 border-[1px] border-white hover:text-blue-700 shop-now-btn relative overflow-hidden duration-300">Learn More <ArrowRightAlt /></a>
+                            </div>
                         </div>
-                        <p className="cursor-default text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eveniet, culpa corrupti consequatur vel non veritatis nulla itaque cumque recusandae.</p>
-                        <div className="flex justify-center items-center w-full mt-3">
-                            <a href="#" className="px-5 py-3 border-[1px] border-white hover:text-blue-700 shop-now-btn relative overflow-hidden duration-300">Learn More <ArrowRightAlt /></a>
-                        </div>
-                    </div>
+                    </Tilt>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="bg-gradient-to-tr from-gray-100 to-gray-200 text-blue-700 p-5">
-                        <div className="flex items-center justify-center relative border-b-[1px] border-blue-400 py-3 mb-3 gap-3">
-                            <img src="/3d-heart.png" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-75%] w-44 drop-shadow-md" />
+                    <Tilt perspective={1000} tiltMaxAngleX={10} tiltMaxAngleY={10} glareColor='white' glareEnable={true}>
+                    <div className="bg-gradient-to-tr from-blue-700 to-blue-800 text-white p-5 rounded-lg">
+                        <div className="flex items-center justify-center relative border-b-[1px] border-blue-900 py-3 mb-3 gap-3">
+                            <img src="/heartbeat.gif" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-90%] w-36" />
                             <h5 className="cursor-default font-semibold">Health Checks</h5>
                         </div>
                         <p className="cursor-default text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eveniet, culpa corrupti consequatur vel non veritatis nulla itaque cumque recusandae.</p>
                         <div className="flex justify-center items-center w-full mt-3">
-                            <a href="#" className="px-5 py-3 border-[1px] border-blue-700 shop-now-btn relative overflow-hidden">Learn More <ArrowRightAlt /></a>
+                            <a href="#" className="px-5 py-3 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 duration-300">Learn More <ArrowRightAlt /></a>
                         </div>
                     </div>
+                    </Tilt>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="bg-gradient-to-tr from-blue-700 to-blue-800 text-white p-5">
+                    <Tilt perspective={1000} tiltMaxAngleX={10} tiltMaxAngleY={10} glareColor='white' glareEnable={true}>
+                    <div className="bg-gradient-to-tr from-blue-700 to-blue-800 text-white p-5 rounded-lg">
                         <div className="flex items-center justify-center relative border-b-[1px] border-blue-900 py-3 mb-3 gap-3">
-                            <img src="/3d-car.png" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-75%] w-44 drop-shadow-md" />
+                            <img src="/delivery-truck.gif" alt="" className="absolute top-0 left-1/2 translate-x-[-50%] translate-y-[-90%] w-36" />
                             <h5 className="cursor-default font-semibold">24/7 Availability</h5>
                         </div>
                         <p className="cursor-default text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eveniet, culpa corrupti consequatur vel non veritatis nulla itaque cumque recusandae.</p>
@@ -89,6 +96,7 @@ const Home = () => {
                             <a href="#" className="px-5 py-3 border-[1px] border-white hover:text-blue-700 shop-now-btn relative overflow-hidden duration-300">Learn More <ArrowRightAlt /></a>
                         </div>
                     </div>
+                    </Tilt>
                 </SwiperSlide>
             </Swiper>
         </div>
@@ -102,8 +110,7 @@ const Home = () => {
             <ContactUs />
         </div>
 
-        <div className="container mx-auto my-16">
-            <h1 className="text-2xl lg:text-5xl font-bold my-5 pl-5 border-l-[10px] hover:border-l-[20px] duration-300 border-blue-700 cursor-default uppercase inline-block">Brands</h1>
+        <div className="container mx-auto mt-16">
             <Brands />
         </div>
         </>
