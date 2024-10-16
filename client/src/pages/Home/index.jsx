@@ -47,7 +47,7 @@ const Home = () => {
         <div className="hero hidden lg:block w-full h-screen">
             <div className="container mx-auto flex justify-center items-center">
                 <h1 className="text-[15vw] lg:text-[200px] font-bold uppercase"><SlideDown delay={5.5}>Pharmacy</SlideDown></h1>
-                <img src="/pills-opened.png" alt="" className="hero-pill absolute top-2/3 left-1/2 translate-x-[-50%] translate-y-0 opacity-0 scale-50 w-32 lg:w-96 drop-shadow-sm" />
+                <img src="/pills-opened.png" alt="" className="hero-pill absolute top-2/3 left-1/2 translate-x-[-50%] translate-y-0 opacity-0 scale-50 w-32 lg:w-96 drop-shadow-sm" loading='lazy' />
             </div>
         </div>
 
