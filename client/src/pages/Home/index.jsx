@@ -11,6 +11,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import LimitedProducts from "../../components/LimitedProducts";
+import LimitedCategories from '../../components/LimitedCategories';
 import HeroSlider from "../../components/HeroSlider";
 import Brands from "../../components/Brands";
 import ContactUs from "../../components/Contact Us";
@@ -54,7 +55,7 @@ const Home = () => {
             <HeroSlider />
         </div>
 
-        <div className="container mx-auto  mb-24">
+        <div className="container mx-auto hidden mb-24">
             <Swiper slidesPerView={window.innerWidth < 1020 ? 1 : 3} spaceBetween={20} loop={false} className='pt-36'>
                 <SwiperSlide>
                     <Tilt perspective={1000} tiltMaxAngleX={10} tiltMaxAngleY={10} glareColor='white' glareEnable={true}>
@@ -101,9 +102,19 @@ const Home = () => {
             </Swiper>
         </div>
 
-        <div className="container mx-auto my-40">
+        <div className="container mx-auto my-52">
+            <LimitedCategories />
+        </div>
+
+        <div className="container mx-auto my-52">
             <h1 className="text-2xl lg:text-5xl font-bold my-5 pl-5 border-l-[10px] hover:border-l-[20px] duration-300 border-blue-700 cursor-default inline-block">FEATURED</h1>
             <LimitedProducts />
+        </div>
+
+        <div className="bg-gradient-to-tr from-blue-700 to-blue-900">
+            <div className="container mx-auto my-24">
+                <MembershipBanner />
+            </div>
         </div>
 
         <div className="container mx-auto mt-52 mb-24">
@@ -114,6 +125,24 @@ const Home = () => {
             <Brands />
         </div>
         </>
+    );
+}
+
+const MembershipBanner = () => {
+    return (
+        <div className="grid grid-cols-12 gap-3">
+            <div className="col-span-3 flex flex-col justify-center">
+                <h5 className='text-white text-3xl font-bold'>Get our Membership</h5>
+                <p className='text-gray-300'>and enjoy discounts on all orders</p>
+            </div>
+            <div className="col-span-6 flex flex-col items-center justify-center gap-3">
+                <p className='text-white'>Save 5% on medicines & get free home delivery with Premium Membership.</p>
+                <button className='shop-now-btn hover:text-blue-700 duration-300 relative overflow-hidden text-white px-5 py-3 border-[1px] border-white'>Explore Now</button>
+            </div>
+            <div className="col-span-3">
+                <img src="/family.png" alt="Family Photo" loading='lazy' />
+            </div>
+        </div>
     );
 }
 
