@@ -17,6 +17,7 @@ import Brands from "../../components/Brands";
 import ContactUs from "../../components/Contact Us";
 
 import Tilt from "react-parallax-tilt";
+import FlashSale from '../../components/FlashSale';
 
 const Home = () => {
     useEffect(()=>{
@@ -102,17 +103,21 @@ const Home = () => {
             </Swiper>
         </div>
 
-        <div className="container mx-auto my-52">
+        <div className="container mx-auto">
+            <FlashSale />
+        </div>
+
+        <div className="container mx-auto my-16">
             <LimitedCategories />
         </div>
 
-        <div className="container mx-auto my-52">
+        <div className="container mx-auto mt-64 mb-16">
             <h1 className="text-2xl lg:text-5xl font-bold my-5 pl-5 border-l-[10px] hover:border-l-[20px] duration-300 border-blue-700 cursor-default inline-block">FEATURED</h1>
             <LimitedProducts />
         </div>
 
-        <div className="bg-gradient-to-tr from-blue-700 to-blue-900">
-            <div className="container mx-auto my-24">
+        <div className="bg-gradient-to-tr from-blue-700 to-blue-900 my-32">
+            <div className="container mx-auto">
                 <MembershipBanner />
             </div>
         </div>
@@ -130,17 +135,17 @@ const Home = () => {
 
 const MembershipBanner = () => {
     return (
-        <div className="grid grid-cols-12 gap-3">
-            <div className="col-span-3 flex flex-col justify-center">
+        <div className="grid grid-cols-12 gap-3 lg:pt-0 pt-3 lg:px-0 px-3">
+            <div className="col-span-12 lg:col-span-3 flex flex-col justify-center">
                 <h5 className='text-white text-3xl font-bold'>Get our Membership</h5>
                 <p className='text-gray-300'>and enjoy discounts on all orders</p>
             </div>
-            <div className="col-span-6 flex flex-col items-center justify-center gap-3">
-                <p className='text-white'>Save 5% on medicines & get free home delivery with Premium Membership.</p>
+            <div className="col-span-6 flex flex-col items-start lg:items-center justify-center gap-3">
+                <p className='text-white text-sm sm:text-md'>Save 5% on medicines & get free home delivery with Premium Membership.</p>
                 <button className='shop-now-btn hover:text-blue-700 duration-300 relative overflow-hidden text-white px-5 py-3 border-[1px] border-white'>Explore Now</button>
             </div>
-            <div className="col-span-3">
-                <img src="/family.png" alt="Family Photo" loading='lazy' />
+            <div className="col-span-12 lg:col-span-3 relative">
+                <img src="/family.png" alt="Family Photo" loading='lazy' className='absolute lg:relative bottom-0 right-0 h-[100px] sm:h-auto' />
             </div>
         </div>
     );

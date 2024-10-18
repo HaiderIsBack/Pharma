@@ -5,7 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { dummyProducts } from "../../assets/products";
 
-import { StarBorderOutlined, StarHalf, Star, SpaRounded, Shuffle, FavoriteBorderOutlined } from '@mui/icons-material';
+import { Shuffle, FavoriteBorderOutlined } from '@mui/icons-material';
+
+import ProductRating from '../ProductRating';
+
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
@@ -58,9 +61,9 @@ const ProductCard = ({ product }) => {
         <>
         <div ref={productRef} className="product-card bg-white border-[1px] border-gray-300 hover:border-black duration-300 p-3 relative group rounded-lg">
             <div className="">
-                <div className="w-full h-[100px] lg:h-[200px] p-3 bg-gray-50 cursor-pointer">
+                <div className="w-full h-[100px] lg:h-[200px] p-3 bg-gradient-to-tr from-gray-50 to-blue-50 relative overflow-hidden cursor-pointer rounded-lg">
                     <Link to={"/product/" + product.id}>
-                        <img src={product.image} alt={product.name} className="w-full h-full object-contain hover:scale-90 duration-300" loading="lazy" />
+                        <img src={product.image} alt={product.name} className="w-full h-full object-contain hover:scale-90 duration-300 relative z-10" loading="lazy" />
                     </Link>
                 </div>
                 <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center gap-3">
@@ -75,45 +78,21 @@ const ProductCard = ({ product }) => {
                 <p className="text-gray-400 text-ellipsis whitespace-nowrap overflow-hidden">{product.categories.map((category, index)=> {
                     return <span key={index}>{category}</span>
                 })}</p>
-                <ProductCardRating rating={product.rating} />
-                {
-                    product.discount ? 
-                    <p className="text-[var(--brand-primary)]">Rs.{discountedPrice} <span className='text-red-600 line-through'>Rs.{product.price}</span></p>
-                    : <p className="text-[var(--brand-primary)]">Rs.{product.price}</p>
-                }
+                
+                <div className="flex justify-between items-center">
+                    <ProductRating rating={product.rating} />
+                    {
+                        product.discount ? 
+                        <p className="text-[var(--brand-primary)] font-semibold">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold'>Rs.{product.price}</span></p>
+                        : <p className="text-[var(--brand-primary)] font-semibold">Rs.{product.price}</p>
+                    }
+                </div>
+                
                 {
                     product.discount ? product.discount.type === "percentage" ? <p className='absolute top-1 left-1 bg-blue-700 text-white p-2 text-sm'>-{product.discount.value}%</p> : null : null
                 }
             </div>
-            <button className="add-to-cart-btn relative duration-300 bg-gradient-to-tr from-blue-500 to-blue-700 text-white w-full text-sm overflow-hidden translate-y-[50%] py-3 mt-3 rounded-lg" onClick={()=>navigate("/product/" + product.id)}>Add to Cart</button>
-        </div>
-        </>
-    );
-}
-
-const ProductCardRating = ({ rating }) => {
-    let isFloat = false;
-    const absoluteRating = Math.floor(rating);
-    if(rating - absoluteRating != 0){
-        isFloat = true;
-    }
-
-    const stars = Array(5).fill(0);
-    return (
-        <>
-        <div className="flex justify-start">
-            {
-                stars.map((_, i) => {
-                    if(i+1 <= absoluteRating){
-                        return <Star className="text-yellow-400" style={{fontSize: "1rem"}} />
-                    }else if(isFloat){
-                        isFloat = false;
-                        return <StarHalf className="text-yellow-400" style={{fontSize: "1rem"}} />
-                    }else{
-                        return <StarBorderOutlined className="text-black" style={{fontSize: "1rem"}} />
-                    }
-                })
-            }
+            {/* <button className="add-to-cart-btn relative duration-300 bg-gradient-to-tr from-blue-500 to-blue-700 text-white w-full text-sm overflow-hidden translate-y-[50%] py-3 mt-3 rounded-lg" onClick={()=>navigate("/product/" + product.id)}>Add to Cart</button> */}
         </div>
         </>
     );

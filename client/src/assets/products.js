@@ -45,7 +45,11 @@ export const dummyProducts = [
         categories: ["Tablets"],
         image: "/cac-1000-plus-orange-tablets-product.png",
         rating: 4.5,
-        price: 60,
+        price: 160,
+        discount: {
+            type: "percentage",
+            value: 5
+        },
         inStock: true,
         quantity: 12
     },
@@ -80,6 +84,10 @@ export const dummyProducts = [
         image: "/brufen-syrup-product.png",
         rating: 4.5,
         price: 60,
+        discount: {
+            type: "percentage",
+            value: 10
+        },
         inStock: true,
         quantity: 12
     },

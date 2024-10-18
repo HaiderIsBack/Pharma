@@ -57,7 +57,7 @@ const HeroSlider = () => {
                 speed={1100}
                 >
                 <SwiperSlide>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-[350px] bg-gradient-to-tr from-blue-500 to-blue-800 p-3" ref={(el) => (slidesRef.current[0] = el)}>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-[350px] bg-gradient-to-tr from-blue-700 to-blue-900 p-3" ref={(el) => (slidesRef.current[0] = el)}>
                         <div className="col-span-1 lg:col-span-2 place-content-center lg:place-content-start relative z-10">
                             <h1 className='slide-text text-[32px] lg:text-[64px] font-bold text-white drop-shadow-sm'>Free Home Delivery</h1>
                             <h4 className='slide-text text-[16px] lg:text-[24px] font-bold text-gray-100 drop-shadow-sm'>upon Rs.2000 Shopping</h4>

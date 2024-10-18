@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { dummyProducts } from "../../assets/products";
 import { useState, useEffect } from "react";
 import { Add, Facebook, FavoriteBorderOutlined, Pinterest, Remove, Shuffle, Twitter } from "@mui/icons-material";
+import ProductRating from "../../components/ProductRating";
 
 const ProductPage = () => {
     const { productId } = useParams();
@@ -59,12 +60,12 @@ const ProductPage = () => {
         <>
         <div className="flex flex-col my-16">
             <div className="grid grid-cols-12">
-                <div className="col-span-6 flex justify-center">
+                <div className="col-span-12 md:col-span-6 flex justify-center">
                     <div className="max-h-[400px] max-w-[400px] object-contain flex justify-center items-center p-10 special-img-box cursor-zoom-in overflow-hidden border-[1px] border-gray-200">
                         <img src={product.image} alt={product.name} />
                     </div>
                 </div>
-                <div className="col-span-6 p-5">
+                <div className="col-span-12 md:col-span-6 p-5">
                     {
                         product.discount ? product.discount.type === "percentage" ? <p className='inline-block bg-blue-700 text-white p-2 my-2 text-sm'>-{product.discount.value}%</p> : null : null
                     }
@@ -72,7 +73,8 @@ const ProductPage = () => {
                     <h3 className="text-gray-400 my-1">{product.categories.map(category => {
                         return <span>{category}</span>
                     })}</h3>
-                     {
+                    <ProductRating rating={product.rating} />
+                    {
                         product.discount ? 
                         <h6 className="text-2xl text-blue-700 my-2">Rs.{discountedPrice} <span className='text-red-600 line-through'>Rs.{product.price}</span></h6>
                         : <h6 className="text-2xl text-blue-700 my-2">Rs.{product.price}</h6>
@@ -111,7 +113,7 @@ const ProductTabs = () => {
                 <button className={selectedTab === 'desc' ? "bg-gray-100 text-blue-700 px-10 py-5 border-b-2 border-blue-700  hover:bg-gray-200 duration-300" : "bg-gray-50 text-black px-10 py-5 border-b-2 border-gray-400  hover:bg-gray-200 duration-300"} onClick={() => setSelectedTab('desc')}>Description</button>
                 <button className={selectedTab === 'reviews' ? "bg-gray-100 text-blue-700 px-10 py-5 border-b-2 border-blue-700  hover:bg-gray-200 duration-300" : "bg-gray-50 text-black px-10 py-5 border-b-2 border-gray-400  hover:bg-gray-200 duration-300"} onClick={() => setSelectedTab('reviews')}>Reviews</button>
             </div>
-            <div className="bg-gray-100 w-full px-5 py-10">
+            <div className="bg-gray-100 w-full px-3 md:px-5 py-10">
                 {
                     selectedTab === 'desc' ? 
                     <DescriptionTab /> : 

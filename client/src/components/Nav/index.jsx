@@ -2,7 +2,7 @@ import './index.css';
 
 import { Link } from 'react-router-dom';
 
-import { SearchOutlined, FavoriteBorderOutlined, ShoppingBagOutlined, Menu } from '@mui/icons-material';
+import { SearchOutlined, FavoriteBorderOutlined, ShoppingBagOutlined, Menu, ReceiptLongOutlined } from '@mui/icons-material';
 
 const Nav = () => {
 
@@ -37,7 +37,7 @@ const Nav = () => {
                         <h1 className='text-blue-700 text-5xl font-bold'>Dawaiwala</h1>
                     </Link>
                 </div>
-                <div className="col-span-7 hidden lg:block">
+                <div className="col-span-6 hidden lg:block">
                     <div className="w-full bg-gray-50 flex border-[1px] border-gray-300 rounded-xl">
                         <select name="" id="" className='outline-none bg-transparent p-3 px-3 cursor-pointer'>
                             <option value="all-categories">All Categories</option>
@@ -49,8 +49,9 @@ const Nav = () => {
                         <button className='bg-blue-700 p-3 rounded-lg'><SearchOutlined className='text-white' /></button>
                     </div>
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 lg:col-span-3">
                     <div className="flex h-full justify-start lg:justify-end items-center gap-3">
+                        <Link to={"/prescription-order"} className='text-blue-700 hover:text-blue-800'><ReceiptLongOutlined /> Prescription Order</Link>
                         <span className='hidden lg:block'>
                             <FavoriteBorderOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' />
                         </span>
