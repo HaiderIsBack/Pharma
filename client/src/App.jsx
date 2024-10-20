@@ -42,7 +42,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path='/'>
-            <Route path='' element={<Home />} />
+            <Route path='' element={<Suspense fallback={<p>Home Loading</p>}><Home /></Suspense>} />
             <Route path='product/:productId' element={<Suspense fallback={<p>Loading</p>}><ProductPage /></Suspense>} />
           </Route>
         </Routes>
