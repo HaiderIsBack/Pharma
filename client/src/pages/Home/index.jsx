@@ -136,13 +136,13 @@ const Home = () => {
 const MembershipBanner = () => {
     return (
         <div className="grid grid-cols-12 gap-3 lg:pt-0 pt-3 lg:px-0 px-3">
-            <div className="col-span-12 lg:col-span-3 flex flex-col justify-center">
+            <div className="col-span-12 lg:col-span-3 flex flex-col gap-3 justify-center">
                 <h5 className='text-white text-3xl font-bold'>Get our Membership</h5>
                 <p className='text-gray-300'>and enjoy discounts on all orders</p>
             </div>
             <div className="col-span-6 flex flex-col items-start lg:items-center justify-center gap-3">
                 <p className='text-white text-sm sm:text-md'>Save 5% on medicines & get free home delivery with Premium Membership.</p>
-                <button className='shop-now-btn hover:text-blue-700 duration-300 relative overflow-hidden text-white px-5 py-3 border-[1px] border-white'>Explore Now</button>
+                <button className='shop-now-btn rounded-lg hover:text-blue-700 duration-300 relative overflow-hidden text-white px-5 py-3 border-[1px] border-white'>Explore Now</button>
             </div>
             <div className="col-span-12 lg:col-span-3 relative">
                 <img src="/family.png" alt="Family Photo" loading='lazy' className='absolute lg:relative bottom-0 right-0 h-[100px] sm:h-auto' />

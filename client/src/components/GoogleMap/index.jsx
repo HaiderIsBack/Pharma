@@ -27,12 +27,12 @@ function GoogleMap() {
   }, []);
 
   return (
-    <div ref={iframeRef} style={{ minHeight: '450px' }}>
+    <div ref={iframeRef} style={{ minHeight: '300px' }}>
       {isVisible ? (
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.447888070609!2d74.32870097442614!3d31.539320646207674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391904958d88f07b%3A0x489650f4e9cb0cc3!2sSigma%20Engineering%20Services!5e0!3m2!1sen!2s!4v1728463706521!5m2!1sen!2s"
           width="100%"
-          height="400"
+          height="300"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"  // Optional: Double lazy-load

@@ -62,7 +62,7 @@ const HeroSlider = () => {
                             <h1 className='slide-text text-[32px] lg:text-[64px] font-bold text-white drop-shadow-sm'>Free Home Delivery</h1>
                             <h4 className='slide-text text-[16px] lg:text-[24px] font-bold text-gray-100 drop-shadow-sm'>upon Rs.2000 Shopping</h4>
                             <p className='slide-text text-gray-200 max-w-[500px] my-5'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam consequuntur atque illo quam magni</p>
-                            <button className='bg-transparent text-white mt-[20px] py-3 px-5 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 inline-block duration-300'>Shop Now <ShoppingCartSharp /></button>
+                            <button className='bg-transparent text-white mt-[20px] py-3 px-5 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 inline-block duration-300 rounded-lg'>Shop Now <ShoppingCartSharp /></button>
                         </div>
                         <div className="w-full relative">
                             <img src="/truck.png" alt="" className='md:translate-y-[10%] lg:translate-x-[-20%] drop-shadow-xl absolute bottom-0 translate-y-[25%] right-0' loading='lazy' />
@@ -77,7 +77,7 @@ const HeroSlider = () => {
                             <h1 className='slide-text text-[32px] lg:text-[64px] font-bold text-blue-700 bg-white px-5 drop-shadow-md'>100% Guarantee</h1>
                             <p className='slide-text text-white max-w-[500px] text-[16px] lg:text-[32px] font-bold my-5'>Non-expired products</p>
                             <p className='slide-text text-gray-200 max-w-[500px] my-5'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam consequuntur atque illo quam magni</p>
-                            <button className='bg-transparent text-white mt-[20px] py-3 px-5 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 inline-block duration-300'>View Our Return Policy <Visibility /></button>
+                            <button className='bg-transparent text-white mt-[20px] py-3 px-5 border-[1px] border-white shop-now-btn relative overflow-hidden hover:text-blue-700 inline-block duration-300 rounded-lg'>View Our Return Policy <Visibility /></button>
                         </div>
                         
                     </div>

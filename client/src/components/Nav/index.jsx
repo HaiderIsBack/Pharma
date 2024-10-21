@@ -2,7 +2,7 @@ import './index.css';
 
 import { Link } from 'react-router-dom';
 
-import { SearchOutlined, FavoriteBorderOutlined, ShoppingBagOutlined, Menu, ReceiptLongOutlined } from '@mui/icons-material';
+import { SearchOutlined, FavoriteBorderOutlined, Menu, ReceiptLongOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 const Nav = () => {
 
@@ -55,9 +55,9 @@ const Nav = () => {
                         <span className='hidden lg:block'>
                             <FavoriteBorderOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' />
                         </span>
-                        <span onClick={openCart}><ShoppingBagOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' /></span>
+                        <span onClick={openCart}><ShoppingCartOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' /></span>
                         <div className="hidden lg:block rounded-full w-[40px] h-[40px] overflow-hidden border-[1px] border-gray-400 hover:border-gray-600 cursor-pointer">
-                            <img src="/xeno.png" alt="" className='w-full h-full object-cover' />
+                            <img src="/xeno.png" alt="Xeno" loading='lazy' className='w-full h-full object-cover' />
                         </div>
                     </div>
                 </div>

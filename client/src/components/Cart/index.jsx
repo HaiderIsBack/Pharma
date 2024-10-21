@@ -24,7 +24,7 @@ const Cart = () => {
                 products.length ? <p>Products</p>
                 : <div className="flex flex-col justify-center items-center gap-3 w-full h-full">
                     <h6>No products added to cart.</h6>
-                    <button className="bg-transparent border-[1px] border-blue-700 text-blue-700 px-7 py-3">Return to Shop</button>
+                    <button className="bg-transparent border-[1px] rounded-lg border-blue-700 text-blue-700 px-7 py-3">Return to Shop</button>
                 </div> 
             }
         </div>
