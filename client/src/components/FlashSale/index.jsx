@@ -51,7 +51,7 @@ const FlashSale = () => {
     ]);
     return (
         <>
-        <div className="relative w-full h-[450px] py-24 mb-52">
+        <div className="relative w-full h-[450px] py-24 mb-60">
             <img src="/flash-sale-2.png" alt="Flash Sale" loading="lazy" className="absolute top-0 left-0 w-[100px]" />
             <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-5 text-center">
@@ -64,7 +64,7 @@ const FlashSale = () => {
                     {
                         products.length > 0 ?
                         products.map((product, i) => {
-                            return (<div className="col-span-1 bg-gray-50 rounded-lg flex flex-col justify-center" key={product.id}>
+                            return (<div className="col-span-1 bg-gradient-to-tr from-gray-50 to-blue-50 rounded-lg flex flex-col justify-center" key={product.id}>
                                 <FlashSaleProduct product={product} index={i} />
                             </div>)
                         })
@@ -72,7 +72,7 @@ const FlashSale = () => {
                     }
                   
                 </div>
-                <div className="col-span-12 block md:hidden px-5">
+                <div className="col-span-12 block md:hidden px-5 mt-5">
                     <Swiper slidesPerView={2} spaceBetween={20}>
                     {
                         products.length > 0 ?
@@ -106,8 +106,8 @@ const FlashSaleProduct = ({ product, index }) => {
                 <h6 className="text-ellipsis whitespace-nowrap overflow-hidden w-full text-center">{product.name}</h6>
                 {
                     product.discount ? 
-                    <p className="text-[var(--brand-primary)] font-semibold">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold'>Rs.{product.price}</span></p>
-                    : <p className="text-[var(--brand-primary)] font-semibold">Rs.{product.price}</p>
+                    <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold text-sm sm:text-md'>Rs.{product.price}</span></p>
+                    : <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{product.price}</p>
                 }
                 {
                     product.discount ? product.discount.type === "percentage" ? <p className='absolute top-1 left-1 bg-blue-700 text-white p-2 text-sm'>-{product.discount.value}%</p> : null : null

@@ -34,7 +34,6 @@ const LimitedProducts = ({ productColumns, maxProducts }) => {
 }
 
 const ProductCard = ({ product }) => {
-    const navigate = useNavigate();
     const productRef = useRef(null);
     let discountedPrice = product.price
 
@@ -47,12 +46,14 @@ const ProductCard = ({ product }) => {
     useEffect(()=>{
         gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(productRef.current, {
-            clipPath: "inset(0% 0% 100% 0%)",
+            // clipPath: "inset(0% 0% 100% 0%)",
+            opacity: 0,
             y: 10,
         },{
-            clipPath: "inset(0% 0% -10% 0%)",
+            // clipPath: "inset(0% 0% -10% 0%)",
+            opacity: 1,
             y: 0,
-            duration: 2,
+            duration: 0.7,
             ease: "power3.inOut",
             scrollTrigger: productRef.current
         })
@@ -67,10 +68,10 @@ const ProductCard = ({ product }) => {
                     </Link>
                 </div>
                 <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 duration-300 flex flex-col justify-center items-center gap-3">
-                    <div className="border-[1px] border-gray-400 cursor-pointer p-2 pt-[-5px] bg-white">
+                    <div className="border-[1px] border-gray-400 cursor-pointer p-2 pt-[-5px] bg-white rounded-md">
                         <Shuffle fontSize="small" className='hover:text-blue-700 duration-150 mt-[-3px]' />
                     </div>
-                    <div className="border-[1px] border-gray-400 cursor-pointer p-2 pt-[-5px] bg-white">
+                    <div className="border-[1px] border-gray-400 cursor-pointer p-2 pt-[-5px] bg-white rounded-md">
                         <FavoriteBorderOutlined fontSize="small" className='hover:text-blue-700 duration-150 mt-[-3px]' />
                     </div>
                 </div>
@@ -79,12 +80,12 @@ const ProductCard = ({ product }) => {
                     return <span key={index}>{category}</span>
                 })}</p>
                 
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                     <ProductRating rating={product.rating} />
                     {
                         product.discount ? 
-                        <p className="text-[var(--brand-primary)] font-semibold">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold'>Rs.{product.price}</span></p>
-                        : <p className="text-[var(--brand-primary)] font-semibold">Rs.{product.price}</p>
+                        <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold text-sm sm:text-md'>Rs.{product.price}</span></p>
+                        : <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{product.price}</p>
                     }
                 </div>
                 

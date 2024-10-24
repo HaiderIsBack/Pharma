@@ -15,6 +15,14 @@ const MenuSidebar = () => {
         setSelectedMenu(menu);
     }
 
+    const closeMenu = () => {
+        const menuSidebar = document.querySelector(".menu-sidebar");
+        const overlay = document.querySelector(".overlay");
+
+        menuSidebar.classList.remove("open");
+        overlay.classList.remove("open");
+    }
+
     return (
         <>
         <div className="menu-sidebar fixed top-0 left-[-100%] w-[300px] h-screen z-[56] duration-300 bg-white px-5">
@@ -29,7 +37,7 @@ const MenuSidebar = () => {
                     <h3 className={selectedMenu === 'menu' ? "flex-1 text-center bg-gray-200 hover:bg-gray-200 duration-300 py-5 cursor-pointer border-b-2 border-blue-700" : "flex-1 text-center bg-gray-100 hover:bg-gray-200 border-b-2 border-gray-300 duration-300 py-5 cursor-pointer"} onClick={() => handleMenuSelect('menu')}>Menu</h3>
                     <h3 className={selectedMenu === 'categories' ? "flex-1 text-center bg-gray-200 hover:bg-gray-200 duration-300 py-5 cursor-pointer border-b-2 border-blue-700" : "flex-1 text-center bg-gray-100 hover:bg-gray-200 border-b-2 border-gray-300 duration-300 py-5 cursor-pointer"} onClick={() => handleMenuSelect('categories')}>Categories</h3>
                 </div>
-                <div className="selected-menu max-h-full overflow-auto">
+                <div className="selected-menu max-h-full overflow-auto" onClick={closeMenu}>
                     {
                         selectedMenu === 'menu' ?
                         <PagesMenu /> : 

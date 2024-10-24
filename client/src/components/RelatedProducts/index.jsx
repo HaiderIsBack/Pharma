@@ -19,7 +19,7 @@ const RelatedProducts = () => {
     return (
         <>
         <div className="container mx-auto my-16">
-            <Swiper slidesPerView={4} spaceBetween={30}>
+            <Swiper slidesPerView={window.innerWidth < 1020 ? 2 : 4} spaceBetween={20}>
                 {
                     products.length > 0 ? products.map((product)=>{
                         return (
