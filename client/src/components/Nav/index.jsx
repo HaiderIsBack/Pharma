@@ -51,7 +51,7 @@ const Nav = () => {
                 </div>
                 <div className="col-span-2 lg:col-span-3">
                     <div className="flex h-full justify-start lg:justify-end items-center gap-3">
-                        <Link to={"/prescription-order"} className='text-blue-700 hover:text-blue-800'><ReceiptLongOutlined /> Prescription Order</Link>
+                        <Link to={"/prescription-order"} className='text-blue-700 hover:text-blue-800 hidden lg:block'><ReceiptLongOutlined /> Prescription Order</Link>
                         <span className='hidden lg:block'>
                             <FavoriteBorderOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' />
                         </span>

@@ -14,12 +14,12 @@ const ProductRating = ({ rating }) => {
             {
                 stars.map((_, i) => {
                     if(i+1 <= absoluteRating){
-                        return <Star className="text-yellow-400" style={{fontSize: "1rem"}} />
+                        return <Star className="text-yellow-400" style={{fontSize: "1rem"}} key={_ + "-" + i} />
                     }else if(isFloat){
                         isFloat = false;
-                        return <StarHalf className="text-yellow-400" style={{fontSize: "1rem"}} />
+                        return <StarHalf className="text-yellow-400" style={{fontSize: "1rem"}} key={_ + "-" + i} />
                     }else{
-                        return <StarBorderOutlined className="text-black" style={{fontSize: "1rem"}} />
+                        return <StarBorderOutlined className="text-black" style={{fontSize: "1rem"}} key={_ + "-" + i} />
                     }
                 })
             }

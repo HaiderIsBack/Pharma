@@ -1,4 +1,4 @@
-import { FavoriteBorderOutlined, KeyboardArrowRight, Search, Shuffle } from "@mui/icons-material";
+import { FavoriteBorderOutlined, ReceiptLongOutlined, KeyboardArrowRight, Search, Shuffle } from "@mui/icons-material";
 import { useState } from "react";
 
 import { dummyCategories } from "../../assets/categories";
@@ -53,6 +53,10 @@ const PagesMenu = () => {
             </Link>
             <Link to={"/shop"} className="flex items-center py-5 px-2 cursor-pointer hover:bg-gray-200 border-b-[1px] border-gray-400">
                 <h5>Shop</h5>
+            </Link>
+            <Link to={"/prescription-order"} className='flex items-center gap-2 py-5 px-2 cursor-pointer hover:bg-gray-200 border-b-[1px] border-gray-400'>
+                <ReceiptLongOutlined /> 
+                Prescription Order
             </Link>
             <Link to={"/compare"} className="flex items-center gap-2 py-5 px-2 cursor-pointer hover:bg-gray-200 border-b-[1px] border-gray-400">
                 <Shuffle />

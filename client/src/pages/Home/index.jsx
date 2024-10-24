@@ -1,6 +1,6 @@
 import './index.css';
 
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 import { ArrowRightAlt } from "@mui/icons-material";
 import { SlideDown } from "../../components/Animations";
@@ -19,7 +19,11 @@ import ContactUs from "../../components/Contact Us";
 import Tilt from "react-parallax-tilt";
 import FlashSale from '../../components/FlashSale';
 
+import UtilityContext from '../../contexts/UtilityContext';
+
 const Home = () => {
+    const { firstTimeVisit, setFirstTimeVisit } = useContext(UtilityContext);
+
     useEffect(()=>{
         gsap.registerPlugin(ScrollTrigger);
         gsap.to(".hero-pill", {
@@ -27,8 +31,13 @@ const Home = () => {
             scale: 1,
             opacity: 1,
             ease: "power4.out",
-            delay: 7,
-            duration: 2
+            delay: firstTimeVisit ? 7 : 1,
+            duration: 2,
+            onComplete: () => {
+                if(firstTimeVisit){
+                    setFirstTimeVisit(false);
+                }
+            }
         });
 
         gsap.to(".hero-pill", {
@@ -47,7 +56,7 @@ const Home = () => {
         <>
         <div className="hero hidden lg:block w-full h-screen">
             <div className="container mx-auto flex justify-center items-center">
-                <h1 className="text-[15vw] lg:text-[200px] font-bold uppercase"><SlideDown delay={5.5}>Pharmacy</SlideDown></h1>
+                <h1 className="text-[15vw] lg:text-[200px] font-bold uppercase"><SlideDown delay={firstTimeVisit ? 5.5 : 0.7}>Pharmacy</SlideDown></h1>
                 <img src="/pills-opened.png" alt="" className="hero-pill absolute top-2/3 left-1/2 translate-x-[-50%] translate-y-0 opacity-0 scale-50 w-32 lg:w-96 drop-shadow-sm" loading='lazy' />
             </div>
         </div>

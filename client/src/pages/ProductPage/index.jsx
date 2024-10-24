@@ -3,14 +3,15 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import { dummyProducts } from "../../assets/products";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 import { Add, Facebook, FavoriteBorderOutlined, Pinterest, Remove, Shuffle, Twitter } from "@mui/icons-material";
 import ProductRating from "../../components/ProductRating";
+import RelatedProducts from "../../components/RelatedProducts";
 
 const ProductPage = () => {
     const { productId } = useParams();
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [product, setProduct] = useState(() => {
         return dummyProducts.find((prod) => prod.id === Number(productId));
     });
@@ -21,12 +22,6 @@ const ProductPage = () => {
             discountedPrice = product.price - ((product.discount.value * product.price) / 100);
         }
     }
-
-    useEffect(()=>{
-        setTimeout(()=>{
-            setLoading(false);
-        }, 10000)
-    }, []);
 
     useEffect(() => {
         if(!loading){
@@ -68,6 +63,10 @@ const ProductPage = () => {
             });
         }
     }, []);
+
+    useEffect(() => {
+        setProduct(dummyProducts.find((prod) => prod.id === Number(productId)));
+    }, [productId])
     
     return (
         <>
@@ -97,8 +96,8 @@ const ProductPage = () => {
                     {
                         loading ?
                         <Skeleton count={1} className="mt-2" /> :
-                        (<h3 className="text-gray-400 my-1">{product.categories.map(category => {
-                            return <span>{category}</span>
+                        (<h3 className="text-gray-400 my-1">{product.categories.map((category, i) => {
+                            return <span key={category + "-" + i}>{category}</span>
                         })}</h3>)
                     }
                     {
@@ -154,6 +153,7 @@ const ProductPage = () => {
                 <div className="container mx-auto"><Skeleton count={1} height={500} /></div> :
                 <ProductTabs />
             }
+            <RelatedProducts />
         </div>
         </>
     );
