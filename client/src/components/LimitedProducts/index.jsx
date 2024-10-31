@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { dummyProducts } from "../../assets/products";
 
-import { Shuffle, FavoriteBorderOutlined } from '@mui/icons-material';
+import { Shuffle, FavoriteBorderOutlined, Add, Remove } from '@mui/icons-material';
 
 import ProductRating from '../ProductRating';
 
@@ -62,7 +62,7 @@ const ProductCard = ({ product }) => {
         <>
         <div ref={productRef} className="product-card bg-white border-[1px] border-gray-300 hover:border-black duration-300 p-3 relative group rounded-lg">
             <div className="">
-                <div className="w-full h-[100px] lg:h-[200px] p-3 bg-gradient-to-tr from-gray-50 to-blue-50 relative overflow-hidden cursor-pointer rounded-lg">
+                <div className="w-full h-[100px] lg:h-[200px] p-5 bg-gradient-to-tr from-gray-50 to-blue-50 relative overflow-hidden cursor-pointer rounded-lg mb-1">
                     <Link to={"/product/" + product.id}>
                         <img src={product.image} alt={product.name} className="w-full h-full object-contain hover:scale-90 duration-300 relative z-10" loading="lazy" />
                     </Link>
@@ -93,6 +93,11 @@ const ProductCard = ({ product }) => {
                     product.discount ? product.discount.type === "percentage" ? <p className='absolute top-1 left-1 bg-blue-700 text-white p-2 text-sm'>-{product.discount.value}%</p> : null : null
                 }
             </div>
+            {/* <div className="flex justify-between items-center my-3">
+                <button className='bg-gray-100 text-blue-700 py-2 px-5 rounded-lg'><Remove fontSize='small' /></button>
+                <span>0</span>
+                <button className='bg-gray-100 text-blue-700 py-2 px-5 rounded-lg'><Add fontSize='small' /></button>
+            </div> */}
             {/* <button className="add-to-cart-btn relative duration-300 bg-gradient-to-tr from-blue-500 to-blue-700 text-white w-full text-sm overflow-hidden translate-y-[50%] py-3 mt-3 rounded-lg" onClick={()=>navigate("/product/" + product.id)}>Add to Cart</button> */}
         </div>
         </>

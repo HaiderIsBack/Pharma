@@ -7,8 +7,11 @@ import { useState, useEffect } from "react";
 import { Add, Facebook, FavoriteBorderOutlined, Pinterest, Remove, Shuffle, Twitter } from "@mui/icons-material";
 import ProductRating from "../../components/ProductRating";
 import RelatedProducts from "../../components/RelatedProducts";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../reducers/cartSlice";
 
 const ProductPage = () => {
+    const dispatch = useDispatch();
     const { productId } = useParams();
 
     const [loading, setLoading] = useState(false);
@@ -21,6 +24,16 @@ const ProductPage = () => {
         if(product.discount.type === "percentage"){
             discountedPrice = product.price - ((product.discount.value * product.price) / 100);
         }
+    }
+
+    const handleAddToCart = () => {
+        dispatch(addToCart({
+            id: product.id,
+            name: product.name,
+            image: product.image,
+            price: discountedPrice,
+            quantity: 1
+        }));
     }
 
     useEffect(() => {

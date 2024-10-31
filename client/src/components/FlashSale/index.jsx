@@ -101,8 +101,8 @@ const FlashSaleProduct = ({ product, index }) => {
     }
     return (
         <Link to={"/product/" + product.id} key={product.id}>
-            <div className="relative flex flex-col justify-center items-center gap-2 py-5">
-                <img src={product.image} alt={product.name} loading="lazy" className="w-full h-[200px] object-contain hover:scale-90 cursor-pointer duration-300" />
+            <div className="relative flex flex-col justify-center items-center gap-2 py-10">
+                <img src={product.image} alt={product.name} loading="lazy" className="w-full h-[150px] object-contain hover:scale-90 cursor-pointer duration-300" />
                 <h6 className="text-ellipsis whitespace-nowrap overflow-hidden w-full text-center">{product.name}</h6>
                 {
                     product.discount ? 

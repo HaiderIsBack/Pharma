@@ -20,6 +20,7 @@ import Tilt from "react-parallax-tilt";
 import FlashSale from '../../components/FlashSale';
 
 import UtilityContext from '../../contexts/UtilityContext';
+import Prescription from '../../components/Prescription';
 
 const Home = () => {
     const { firstTimeVisit, setFirstTimeVisit } = useContext(UtilityContext);
@@ -123,6 +124,10 @@ const Home = () => {
         <div className="container mx-auto mt-64 mb-16">
             <h1 className="text-2xl lg:text-5xl font-bold my-5 pl-5 border-l-[10px] hover:border-l-[20px] duration-300 border-blue-700 cursor-default inline-block">FEATURED</h1>
             <LimitedProducts />
+        </div>
+
+        <div className="container mx-auto px-7 md:px-0">
+            <Prescription />
         </div>
 
         <div className="bg-gradient-to-tr from-blue-700 to-blue-900 my-32">

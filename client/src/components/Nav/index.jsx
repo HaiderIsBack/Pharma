@@ -45,13 +45,13 @@ const Nav = () => {
                             <option value="all-categories">Baby Care</option>
                             <option value="all-categories">Powders</option>
                         </select>
-                        <input type="text" name="" id="" className='outline-none bg-transparent flex-1 border-l-[1px] border-gray-300 p-3 pl-5 ml-5' placeholder='Search Medicines' />
+                        <input type="text" className='outline-none bg-transparent flex-1 border-l-[1px] border-gray-300 p-3 pl-5 ml-5' placeholder='Search Medicines' />
                         <button className='bg-blue-700 p-3 rounded-lg'><SearchOutlined className='text-white' /></button>
                     </div>
                 </div>
                 <div className="col-span-2 lg:col-span-3">
                     <div className="flex h-full justify-start lg:justify-end items-center gap-3">
-                        <Link to={"/prescription-order"} className='text-blue-700 hover:text-blue-800 hidden lg:block'><ReceiptLongOutlined /> Prescription Order</Link>
+                        <Link to={"#prescription-section"} className='text-blue-700 hover:text-blue-800 hidden lg:block'><ReceiptLongOutlined /> Prescription Order</Link>
                         <span className='hidden lg:block'>
                             <FavoriteBorderOutlined className='text-gray-400 hover:text-gray-600 duration-200 cursor-pointer' />
                         </span>

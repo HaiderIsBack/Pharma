@@ -18,7 +18,7 @@ const RelatedProducts = () => {
 
     return (
         <>
-        <div className="container mx-auto my-16">
+        <div className="container mx-auto my-16 px-5 md:px-0">
             <Swiper slidesPerView={window.innerWidth < 1020 ? 2 : 4} spaceBetween={20}>
                 {
                     products.length > 0 ? products.map((product)=>{
@@ -48,12 +48,12 @@ const ProductCard = ({ product }) => {
     useEffect(()=>{
         gsap.registerPlugin(ScrollTrigger);
         gsap.fromTo(productRef.current, {
-            clipPath: "inset(0% 0% 100% 0%)",
+            opacity: 0,
             y: 10,
         },{
-            clipPath: "inset(0% 0% -10% 0%)",
+            opacity: 1,
             y: 0,
-            duration: 2,
+            duration: 0.7,
             ease: "power3.inOut",
             scrollTrigger: productRef.current
         })
@@ -80,12 +80,12 @@ const ProductCard = ({ product }) => {
                     return <span key={index}>{category}</span>
                 })}</p>
                 
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
                     <ProductRating rating={product.rating} />
                     {
                         product.discount ? 
-                        <p className="text-[var(--brand-primary)] font-semibold">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold'>Rs.{product.price}</span></p>
-                        : <p className="text-[var(--brand-primary)] font-semibold">Rs.{product.price}</p>
+                        <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{discountedPrice} <span className='text-red-600 line-through font-semibold text-sm sm:text-md'>Rs.{product.price}</span></p>
+                        : <p className="text-[var(--brand-primary)] font-semibold text-sm sm:text-md">Rs.{product.price}</p>
                     }
                 </div>
                 

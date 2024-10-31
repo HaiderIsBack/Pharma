@@ -58,6 +58,16 @@ const Footer = () => {
                         <li className='text-sm text-gray-300 hover:text-white duration-300 my-2'><a href="#">About Us</a></li>
                     </ul>
                 </div>
+                <div className="col-span-12 lg:col-span-5 grid grid-cols-4 bg-gradient-to-tr from-gray-50 to-blue-200 text-blue-700 rounded-lg shadow-lg">
+                    <div className="col-span-1 flex justify-center items-center">
+                        <img src="/prescription.svg" alt="Prescription Icon" className="w-[50px]" />
+                    </div>
+                    <div className="col-span-3 flex flex-col justify-center">
+                        <h5 className="text-xl font-bold">Order with Prescription</h5>
+                        <p className="text-sm">Upload prescription and we will deliver medicine to you.</p>
+                        <button className="bg-blue-700 text-white w-[150px] py-2 px-5 rounded-lg mt-5">Upload</button>
+                    </div>
+                </div>
             </div>
         </footer>
         <LowerFooter />
